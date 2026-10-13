@@ -1,0 +1,30 @@
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace Program54
+    {
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Заряд аккумулятора (%): ");
+            if (int.TryParse(Console.ReadLine(), out int charge) && charge >= 0 && charge <= 100)
+            {
+                string status;
+                if (charge < 10) status = "Критический";
+                else if (charge <= 20) status = "Низкий";
+                else if (charge <= 80) status = "Нормальный";
+                else status = "Полный";
+
+                Console.WriteLine(status);
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: заряд от 0 до 100%.");
+            }
+        }
+    }
+    }
